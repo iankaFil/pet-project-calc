@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "pet-project-calc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goitacademy.github.io/react-homework-template/",
+  "homepage": "https://iankafil.github.io/pet-project-calc/",
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
     "@testing-library/jest-dom": "^5.16.3",
