@@ -1,10 +1,16 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Button } from '@chakra-ui/react';
 import Numbers from './Numbers/Numbers';
+import CountButton from './CountButton/CountButton';
 import { useState } from 'react';
 
 export const App = () => {
   const [counts, setCounts] = useState('0');
   const [result, setResult] = useState('');
+
+  function applyExpressions(countedNumber) {
+    setCounts(countedNumber);
+    setResult(eval(counts));
+  }
   return (
     <div>
       <Box
@@ -40,6 +46,37 @@ export const App = () => {
             </Text>
           </Box>
           <Numbers data={counts} onClick={setCounts}></Numbers>
+          <Box display="flex" flexDirection="column">
+            <CountButton
+              data={counts}
+              expression={'+'}
+              onClick={applyExpressions}
+            />
+            <CountButton
+              data={counts}
+              expression={'-'}
+              onClick={applyExpressions}
+            />{' '}
+            <CountButton
+              data={counts}
+              expression={'*'}
+              onClick={applyExpressions}
+            />{' '}
+            <CountButton
+              data={counts}
+              expression={'/'}
+              onClick={applyExpressions}
+            />
+          </Box>
+          <Button
+            bg="orange"
+            m="4px"
+            onClick={() => {
+              setResult(eval(counts));
+            }}
+          >
+            =
+          </Button>
         </Box>
       </Box>
     </div>
