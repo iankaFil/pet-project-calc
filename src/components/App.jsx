@@ -26,57 +26,71 @@ export const App = () => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          w="200vh"
+          w="50vh"
+          bg="gray.100"
+          borderRadius="8px"
         >
           <Box display="flex" w="100%" justifyContent="between">
             <Text
               display="flex"
               justifyContent="center"
+              marginLeft="auto"
+              marginRight="auto"
               alignItems="center"
-              bg="gray.50"
-              w="100%"
+              bg="gray.100"
+              w="50vh"
               h="38px"
               px="4px"
               borderRadius="8px"
             >
               {counts}
             </Text>
-            <Text w="fit-content" h="38px" textColor="orange">
+            <Text
+              display="flex"
+              w="fit-content"
+              h="38px"
+              textColor="orange"
+              justifyContent="start"
+              alignItems="center"
+              marginRight="10px"
+            >
               {result}
             </Text>
           </Box>
-          <Numbers data={counts} onClick={setCounts}></Numbers>
-          <Box display="flex" flexDirection="column">
-            <CountButton
-              data={counts}
-              expression={'+'}
-              onClick={applyExpressions}
-            />
-            <CountButton
-              data={counts}
-              expression={'-'}
-              onClick={applyExpressions}
-            />{' '}
-            <CountButton
-              data={counts}
-              expression={'*'}
-              onClick={applyExpressions}
-            />{' '}
-            <CountButton
-              data={counts}
-              expression={'/'}
-              onClick={applyExpressions}
-            />
+          <Box display="flex" bg="gray.200">
+            <Numbers data={counts} onClick={setCounts} />
+            <Box display="flex" flexDirection="column" m="5px" gap="8px">
+              <CountButton
+                data={counts}
+                expression={'+'}
+                onClick={applyExpressions}
+              />
+              <CountButton
+                data={counts}
+                expression={'-'}
+                onClick={applyExpressions}
+              />{' '}
+              <CountButton
+                data={counts}
+                expression={'*'}
+                onClick={applyExpressions}
+              />{' '}
+              <CountButton
+                data={counts}
+                expression={'/'}
+                onClick={applyExpressions}
+              />
+            </Box>
+            <Button
+              bg="orange"
+              m="4px"
+              onClick={() => {
+                setResult(eval(counts));
+              }}
+            >
+              =
+            </Button>
           </Box>
-          <Button
-            bg="orange"
-            m="4px"
-            onClick={() => {
-              setResult(eval(counts));
-            }}
-          >
-            =
-          </Button>
         </Box>
       </Box>
     </div>

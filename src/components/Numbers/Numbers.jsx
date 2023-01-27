@@ -5,8 +5,9 @@ const Numbers = props => {
     return (
       <Button
         onClick={e => {
-          if (props.data !== 0) {
+          if (props.data != 0) {
             props.onClick(props.data + e.target.innerHTML);
+            console.log(props.data);
           } else {
             props.onClick(e.target.innerHTML);
           }
@@ -15,11 +16,14 @@ const Numbers = props => {
         w="40px"
         h="40px"
         margin="4px"
+        bg="gray.100"
+        _hover="gray.400"
       >
         {number}
       </Button>
     );
   });
+
   return (
     <Box display="flex" flexWrap="wrap" w="150px">
       {nums}
