@@ -2,16 +2,16 @@ import { Box, Text, Button } from '@chakra-ui/react';
 import Numbers from './Numbers/Numbers';
 import CountButton from './CountButton/CountButton';
 import { useState } from 'react';
-// import { create, all } from 'mathjs';
 
 export const App = () => {
   const [counts, setCounts] = useState('0');
   const [result, setResult] = useState('');
+  const mathjs = require('mathjs');
 
-  const math = require('mathjs');
   function applyExpressions(countedNumber) {
     setCounts(countedNumber);
-    setResult(math.eval(counts));
+    const evaluated = mathjs.parse(counts).evaluate();
+    setResult(evaluated);
   }
   return (
     <div>
@@ -90,7 +90,8 @@ export const App = () => {
             bg="orange"
             m="4px"
             onClick={() => {
-              setResult(math.eval(counts));
+              const evaluated = mathjs.parse(counts).evaluate();
+              setResult(evaluated);
             }}
           >
             =
