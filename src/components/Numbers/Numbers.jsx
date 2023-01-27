@@ -5,7 +5,7 @@ const Numbers = props => {
     return (
       <Button
         onClick={e => {
-          if (props.data != 0) {
+          if (props.data !== '0') {
             props.onClick(props.data + e.target.innerHTML);
             console.log(props.data);
           } else {
