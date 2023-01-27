@@ -2,14 +2,16 @@ import { Box, Text, Button } from '@chakra-ui/react';
 import Numbers from './Numbers/Numbers';
 import CountButton from './CountButton/CountButton';
 import { useState } from 'react';
+// import { create, all } from 'mathjs';
 
 export const App = () => {
   const [counts, setCounts] = useState('0');
   const [result, setResult] = useState('');
 
+  const math = require('mathjs');
   function applyExpressions(countedNumber) {
     setCounts(countedNumber);
-    setResult(eval(counts));
+    setResult(math.eval(counts));
   }
   return (
     <div>
@@ -21,13 +23,13 @@ export const App = () => {
         h="100vh"
       >
         <Box
-          display="flex"
+          display="inline-block"
           gap="5px"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
           w="50vh"
-          bg="gray.100"
+          bg="#272727"
           borderRadius="8px"
         >
           <Box display="flex" w="100%" justifyContent="between">
@@ -37,7 +39,8 @@ export const App = () => {
               marginLeft="auto"
               marginRight="auto"
               alignItems="center"
-              bg="gray.100"
+              bg="#272727"
+              color="#e9e9e9"
               w="50vh"
               h="38px"
               px="4px"
@@ -47,12 +50,13 @@ export const App = () => {
             </Text>
             <Text
               display="flex"
-              w="fit-content"
+              w="70px"
               h="38px"
               textColor="orange"
+              bg="#575757"
               justifyContent="start"
               alignItems="center"
-              marginRight="10px"
+              // marginRight="10px"
             >
               {result}
             </Text>
@@ -81,16 +85,16 @@ export const App = () => {
                 onClick={applyExpressions}
               />
             </Box>
-            <Button
-              bg="orange"
-              m="4px"
-              onClick={() => {
-                setResult(eval(counts));
-              }}
-            >
-              =
-            </Button>
           </Box>
+          <Button
+            bg="orange"
+            m="4px"
+            onClick={() => {
+              setResult(math.eval(counts));
+            }}
+          >
+            =
+          </Button>
         </Box>
       </Box>
     </div>

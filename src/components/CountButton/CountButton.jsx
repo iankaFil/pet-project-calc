@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
 
 const CountButton = props => {
-  const expressions = /\+|\-|\/|\*|/;
+  const expressions = /[+\-*/^%()]/;
   const lastNumber = props.data[props.data.length - 1];
   const checkExpressionType = () => {
     if (expressions.test(lastNumber)) {
