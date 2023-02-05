@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pet-project-calc/static/css/main.7acaea2f.css",
-    "main.js": "/pet-project-calc/static/js/main.a33adf3c.js",
+    "main.css": "/pet-project-calc/static/css/main.f9ec851d.css",
+    "main.js": "/pet-project-calc/static/js/main.3ae7afc3.js",
     "index.html": "/pet-project-calc/index.html",
-    "main.7acaea2f.css.map": "/pet-project-calc/static/css/main.7acaea2f.css.map",
-    "main.a33adf3c.js.map": "/pet-project-calc/static/js/main.a33adf3c.js.map"
+    "main.f9ec851d.css.map": "/pet-project-calc/static/css/main.f9ec851d.css.map",
+    "main.3ae7afc3.js.map": "/pet-project-calc/static/js/main.3ae7afc3.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.a33adf3c.js"
+    "static/css/main.f9ec851d.css",
+    "static/js/main.3ae7afc3.js"
   ]
 }
